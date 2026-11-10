@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
+    <title>Murach's survey</title>
     <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     <style>
         label {
@@ -16,27 +16,27 @@
     <p>Here is the information that you entered:</p>
 
     <label>Email:</label>
-    <span>${user.email}</span><br>
+    <span>${survey.user.email}</span><br>
     <label>First Name:</label>
-    <span>${user.firstName}</span><br>
+    <span>${survey.user.firstName}</span><br>
     <label>Last Name:</label>
-    <span>${user.lastName}</span><br>
+    <span>${survey.user.lastName}</span><br>
     <label>Date of birth:</label>
-    <span>${user.birthday}</span><br>
+    <span>${survey.user.birthday}</span><br>
 
     <br>
     <h3>Additional Information:</h3>
     <label>How you heard about us:</label>
-    <span>${hearAbout}</span><br>
+    <span>${survey.hearAbout}</span><br>
 
     <label>Receive announcements for new CDs:</label>
-    <span>${receiveNewCDs}</span><br>
+    <span>${survey.receiveAnnouncements ? "Yes" : "No"}</span><br>
 
     <label>Receive special offers:</label>
-    <span>${receiveSpecialOffers}</span><br>
+    <span>${survey.receiveOffers ? "Yes" : "No"}</span><br>
 
     <label>Preferred contact method:</label>
-    <span>${contactType}</span><br>
+    <span>${survey.contactType}</span><br>
     <p>To enter another survey, click on the Back button in your browser or the Return button shown below.</p>
 
     <form action="" method="get">

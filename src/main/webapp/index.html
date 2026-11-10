@@ -2,45 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Murach's survey</title>
     <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <img src="https://www.southeastlinuxfest.org/wp-content/uploads/2014/06/Murach_image.jpg" alt="Murach's logo" style="width:100px;height:100px;">
-    <h1>Survey</h1>
-    <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+    <section>
+        <img src="https://www.southeastlinuxfest.org/wp-content/uploads/2014/06/Murach_image.jpg" alt="Murach's logo" style="width:100px;height:100px;">
+        <h1>Survey</h1>
+        <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+    </section>
 
     <form action="survey" method="post">
         <input type="hidden" name="action" value="add">
         <section>
         <h2>Your information:</h2>
-            <label style="font-weight: bold;">First Name</label>
+            <label>First Name</label>
             <input type="text" name="firstName" required><br>
-            <label style="font-weight: bold;">Last Name</label>
+            <label>Last Name</label>
             <input type="text" name="lastName" required><br>
-            <label style="font-weight: bold;">Email</label>
+            <label>Email</label>
             <input type="text" name="email" required><br>
-            <label style="font-weight: bold;">Date of Birth</label>
+            <label>Date of Birth</label>
             <input type="date" id="birthday" name="birthday">
         </section>
 
         <section>
             <h2>How did you hear about us?</h2>
-            <input type="radio" name="hear_about" value="Search engine">Search engine
-            <input type="radio" name="hear_about" value="Word of mouth">Word of mouth
-            <input type="radio" name="hear_about" value="Social Media">Social Media
-            <input type="radio" name="hear_about" value="Other">Other<br>
+            <input type="radio" name="hearAbout" value="Search engine" required>Search engine
+            <input type="radio" name="hearAbout" value="Word of mouth" required>Word of mouth
+            <input type="radio" name="hearAbout" value="Social Media" required>Social Media
+            <input type="radio" name="hearAbout" value="Other" required>Other<br>
         </section>
 
         <section>
             <h2>Would you like to receive announcements about new CDs and special offers?</h2>
-            <input type="checkbox" name="emailOK1">YES, I'd like that.<br>
-            <input type="checkbox" name="emailOK2">YES, please send me email announcements.<br>
+            <input type="checkbox" name="receiveAnnouncements">YES, I'd like that.<br>
+            <input type="checkbox" name="receiveOffers">YES, please send me email announcements.<br>
             Please contact me by:
-            <select name="contact_type">
-                <option value="EmailOrPostMail" selected>Email or post mail</option>
-                <option value="EmailOnly">Email only</option>
-                <option value="PostMailOnly">Post mail only</option>
+            <select name="contactType">
+                <option value="Email or post mail" selected>Email or post mail</option>
+                <option value="Email only">Email only</option>
+                <option value="Post mail onl">Post mail only</option>
             </select>
             <br>
         </section>

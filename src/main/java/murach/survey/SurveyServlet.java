@@ -1,6 +1,7 @@
 package murach.survey;
 
 import murach.business.User;
+import murach.business.Survey;
 
 import java.io.*;
 import jakarta.servlet.*;
@@ -27,20 +28,16 @@ public class SurveyServlet  extends HttpServlet {
             String email = request.getParameter("email");
             String birthday = request.getParameter("birthday");
             User user = new User(firstName, lastName, email, birthday);
-            request.setAttribute("user", user);
 
-            String hearAbout = request.getParameter("hear_about");
-            String emailOK1 = request.getParameter("emailOK1");
-            String emailOK2 = request.getParameter("emailOK2");
-            String contactType = request.getParameter("contact_type");
+            String hearAbout = request.getParameter("hearAbout");
+            String receiveAnnouncements = request.getParameter("receiveAnnouncements");
+            String receiveOffers = request.getParameter("receiveOffers");
+            String contactType = request.getParameter("contactType");
+            Boolean announcements = receiveAnnouncements != null;
+            Boolean offers = receiveOffers != null;
+            Survey survey = new Survey(user, hearAbout, announcements, offers, contactType);
 
-            String receiveNewCDs = (emailOK1 != null) ? "Yes" : "No";
-            String receiveSpecialOffers = (emailOK2 != null) ? "Yes" : "No";
-
-            request.setAttribute("hearAbout", hearAbout);
-            request.setAttribute("receiveNewCDs", receiveNewCDs);
-            request.setAttribute("receiveSpecialOffers", receiveSpecialOffers);
-            request.setAttribute("contactType", contactType);
+            request.setAttribute("survey", survey);
             url = "/thanks.jsp";
         }
 

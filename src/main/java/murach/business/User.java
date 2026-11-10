@@ -10,10 +10,10 @@ public class User implements Serializable {
 
 
     public User() {
-        firstName = "";
-        lastName = "";
-        email = "";
-        birthday = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.email = "";
+        this.birthday = "";
     }
 
     public User(String firstName, String lastName, String email, String birthday) {
