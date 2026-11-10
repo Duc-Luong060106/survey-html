@@ -1,22 +1,23 @@
 package  murach.business;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
-    private String birthday;
+    private LocalDate birthday;
 
 
     public User() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
-        this.birthday = "";
+        this.birthday = null;
     }
 
-    public User(String firstName, String lastName, String email, String birthday) {
+    public User(String firstName, String lastName, String email, LocalDate birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -41,10 +42,10 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 }

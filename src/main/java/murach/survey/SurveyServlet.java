@@ -6,6 +6,7 @@ import murach.business.Survey;
 import java.io.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
+import java.time.LocalDate;
 
 public class SurveyServlet  extends HttpServlet {
     @Override
@@ -27,7 +28,7 @@ public class SurveyServlet  extends HttpServlet {
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String birthday = request.getParameter("birthday");
-            User user = new User(firstName, lastName, email, birthday);
+            User user = new User(firstName, lastName, email, LocalDate.parse(birthday));
 
             String hearAbout = request.getParameter("hearAbout");
             String receiveAnnouncements = request.getParameter("receiveAnnouncements");
